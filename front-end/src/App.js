@@ -1,17 +1,30 @@
 import './App.css';
-import Home from './Containers/Home/Home';
-import Navbar from './Components/Navbar/Navbar';
+import './Components/Background/Background.scss'
+import { Routes, Route} from "react-router-dom"
+
+import Home from './Containers/Home/Home'
+import Quesionnaire from './Containers/Questionnaire/Questionnaire';
+import Formation from './Containers/Formation/Formation';
+import Login from './Containers/Login/Login'
+import NotFound from './Containers/NotFound/NotFound'
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Home valeur={"2"}> 
-
-
-      </Home>
-    </div>
+    <>
+      <Routes>
+        <Route path="/"              element={ <Home/>} />
+        <Route path="/Formation"     element={ <Formation/> } />
+        <Route path="/Questionnaire" element={ <Quesionnaire/> } />
+        <Route path="/Connexion"     element={ <Login/>} />
+        <Route path='*'              element={ <NotFound /> } />
+      </Routes>
+    </>
   );
 }
+
+
 
 export default App;

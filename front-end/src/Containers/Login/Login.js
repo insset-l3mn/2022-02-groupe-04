@@ -1,6 +1,7 @@
 import React from 'react'
-import Navbar1 from '../../Components/Navbar1/Navbar1'
 import Background from '../../Components/Background/Background'
+import Navbar1 from '../../Components/Navbar1/Navbar1'
+
 
 const h1Style = {
   textAlign: "center",
@@ -12,12 +13,13 @@ const h1Style = {
   
 }
 
-export default function Home() {
+export default function Login() {
   return (
       <>
-            <Background />
-            <Navbar1 />
-        <h1 style={h1Style}> Votre formation en Audiovisuel !</h1>     
+        <Background />
+        <Navbar1 />
+
+        <h1 style={h1Style}> Connexion </h1>     
       </>
   )
 }
