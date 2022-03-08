@@ -1,6 +1,7 @@
 import React from 'react'
 import Background from '../../Components/Background/Background'
 import Navbar1 from '../../Components/Navbar1/Navbar1'
+import AuthForm from '../../Components/AuthForm/AuthForm'
 
 
 const h1Style = {
@@ -19,7 +20,9 @@ export default function Login() {
         <Background />
         <Navbar1 />
 
-        <h1 style={h1Style}> Connexion </h1>     
+        <AuthForm />
+        
+          
       </>
   )
 }
