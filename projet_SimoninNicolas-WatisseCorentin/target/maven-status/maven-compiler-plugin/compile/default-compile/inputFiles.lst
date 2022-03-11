@@ -1,18 +1,15 @@
-D:\Desktop\Cours L3\Semestre 2\Application Web\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\JakartaRestConfiguration.java
-D:\Desktop\Cours L3\Semestre 2\Application Web\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\entities\Compétences.java
-D:\Desktop\Cours L3\Semestre 2\Application Web\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\entities\RéponsesPK.java
-D:\Desktop\Cours L3\Semestre 2\Application Web\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\entities\Parcours.java
-D:\Desktop\Cours L3\Semestre 2\Application Web\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\entities\Questionnaire.java
-D:\Desktop\Cours L3\Semestre 2\Application Web\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\resources\JakartaEE8Resource.java
-D:\Desktop\Cours L3\Semestre 2\Application Web\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\entities\Graphe.java
-D:\Desktop\Cours L3\Semestre 2\Application Web\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\entities\UtilisateurPK.java
-D:\Desktop\Cours L3\Semestre 2\Application Web\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\entities\Réponses.java
-D:\Desktop\Cours L3\Semestre 2\Application Web\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\entities\FormationPK.java
-D:\Desktop\Cours L3\Semestre 2\Application Web\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\api\HelloResource.java
-D:\Desktop\Cours L3\Semestre 2\Application Web\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\api\DemoApplication.java
-D:\Desktop\Cours L3\Semestre 2\Application Web\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\entities\Formation.java
-D:\Desktop\Cours L3\Semestre 2\Application Web\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\entities\Questions.java
-D:\Desktop\Cours L3\Semestre 2\Application Web\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\entities\Utilisateur.java
-D:\Desktop\Cours L3\Semestre 2\Application Web\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\entities\QuestionsPK.java
-D:\Desktop\Cours L3\Semestre 2\Application Web\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\entities\CompétencesPK.java
-D:\Desktop\Cours L3\Semestre 2\Application Web\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\entities\Formateur.java
+D:\Desktop\Cours L3\Semestre 2\Application Web\Projet Jakarta React\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\resources\GestionaryUser.java
+D:\Desktop\Cours L3\Semestre 2\Application Web\Projet Jakarta React\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\filter\Filtre.java
+D:\Desktop\Cours L3\Semestre 2\Application Web\Projet Jakarta React\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\resources\UtilisateurRessources.java
+D:\Desktop\Cours L3\Semestre 2\Application Web\Projet Jakarta React\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\resources\AbstractFacade.java
+D:\Desktop\Cours L3\Semestre 2\Application Web\Projet Jakarta React\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\ejb\UserManager.java
+D:\Desktop\Cours L3\Semestre 2\Application Web\Projet Jakarta React\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\ProjetApp.java
+D:\Desktop\Cours L3\Semestre 2\Application Web\Projet Jakarta React\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\models\Role.java
+D:\Desktop\Cours L3\Semestre 2\Application Web\Projet Jakarta React\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\models\User.java
+D:\Desktop\Cours L3\Semestre 2\Application Web\Projet Jakarta React\projet_SimoninNicolas-WatisseCorentin\src\main\java\errorMessage.java
+D:\Desktop\Cours L3\Semestre 2\Application Web\Projet Jakarta React\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\resources\UtilisateurFacadeREST.java
+D:\Desktop\Cours L3\Semestre 2\Application Web\Projet Jakarta React\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\models\ERole.java
+D:\Desktop\Cours L3\Semestre 2\Application Web\Projet Jakarta React\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\entities\errorMessage.java
+D:\Desktop\Cours L3\Semestre 2\Application Web\Projet Jakarta React\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\entities\Utilisateur.java
+D:\Desktop\Cours L3\Semestre 2\Application Web\Projet Jakarta React\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\resources\JakartaEE8Resource.java
+D:\Desktop\Cours L3\Semestre 2\Application Web\Projet Jakarta React\projet_SimoninNicolas-WatisseCorentin\src\main\java\fr\insset\l3\projet_simoninnicolas\watissecorentin\JakartaRestConfiguration.java

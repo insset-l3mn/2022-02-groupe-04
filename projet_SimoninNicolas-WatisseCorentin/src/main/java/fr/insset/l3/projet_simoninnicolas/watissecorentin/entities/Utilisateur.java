@@ -5,14 +5,12 @@
 package fr.insset.l3.projet_simoninnicolas.watissecorentin.entities;
 
 import java.io.Serializable;
-import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -27,18 +25,25 @@ import javax.validation.constraints.Size;
 @Table(name = "utilisateur")
 @NamedQueries({
     @NamedQuery(name = "Utilisateur.findAll", query = "SELECT u FROM Utilisateur u"),
-    @NamedQuery(name = "Utilisateur.findByIdUtilisateur", query = "SELECT u FROM Utilisateur u WHERE u.utilisateurPK.idUtilisateur = :idUtilisateur"),
+    @NamedQuery(name = "Utilisateur.findByIdUtilisateur", query = "SELECT u FROM Utilisateur u WHERE u.idUtilisateur = :idUtilisateur"),
     @NamedQuery(name = "Utilisateur.findByNom", query = "SELECT u FROM Utilisateur u WHERE u.nom = :nom"),
     @NamedQuery(name = "Utilisateur.findByPrenom", query = "SELECT u FROM Utilisateur u WHERE u.prenom = :prenom"),
     @NamedQuery(name = "Utilisateur.findByFormation", query = "SELECT u FROM Utilisateur u WHERE u.formation = :formation"),
     @NamedQuery(name = "Utilisateur.findByUniversit\u00e9", query = "SELECT u FROM Utilisateur u WHERE u.universit\u00e9 = :universit\u00e9"),
     @NamedQuery(name = "Utilisateur.findByMail", query = "SELECT u FROM Utilisateur u WHERE u.mail = :mail"),
-    @NamedQuery(name = "Utilisateur.findByParcoursidParcours", query = "SELECT u FROM Utilisateur u WHERE u.utilisateurPK.parcoursidParcours = :parcoursidParcours")})
+    @NamedQuery(name = "Utilisateur.findByRole", query = "SELECT u FROM Utilisateur u WHERE u.role = :role")})
 public class Utilisateur implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @EmbeddedId
-    protected UtilisateurPK utilisateurPK;
+
+    public static Object getResultList() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "idUtilisateur")
+    private Integer idUtilisateur;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 45)
@@ -64,43 +69,35 @@ public class Utilisateur implements Serializable {
     @Size(min = 1, max = 45)
     @Column(name = "mail")
     private String mail;
-    @ManyToMany(mappedBy = "utilisateurCollection")
-    private Collection<Réponses> réponsesCollection;
-    @ManyToMany(mappedBy = "utilisateurCollection")
-    private Collection<Questions> questionsCollection;
-    @JoinColumn(name = "Graphe_idGraphe", referencedColumnName = "idGraphe")
-    @ManyToOne(optional = false)
-    private Graphe grapheidGraphe;
-    @JoinColumn(name = "Parcours_idParcours", referencedColumnName = "idParcours", insertable = false, updatable = false)
-    @ManyToOne(optional = false)
-    private Parcours parcours;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "Role")
+    private String role;
 
     public Utilisateur() {
     }
 
-    public Utilisateur(UtilisateurPK utilisateurPK) {
-        this.utilisateurPK = utilisateurPK;
+    public Utilisateur(Integer idUtilisateur) {
+        this.idUtilisateur = idUtilisateur;
     }
 
-    public Utilisateur(UtilisateurPK utilisateurPK, String nom, String prenom, String formation, String université, String mail) {
-        this.utilisateurPK = utilisateurPK;
+    public Utilisateur(Integer idUtilisateur, String nom, String prenom, String formation, String université, String mail, String role) {
+        this.idUtilisateur = idUtilisateur;
         this.nom = nom;
         this.prenom = prenom;
         this.formation = formation;
         this.université = université;
         this.mail = mail;
+        this.role = role;
     }
 
-    public Utilisateur(int idUtilisateur, int parcoursidParcours) {
-        this.utilisateurPK = new UtilisateurPK(idUtilisateur, parcoursidParcours);
+    public Integer getIdUtilisateur() {
+        return idUtilisateur;
     }
 
-    public UtilisateurPK getUtilisateurPK() {
-        return utilisateurPK;
-    }
-
-    public void setUtilisateurPK(UtilisateurPK utilisateurPK) {
-        this.utilisateurPK = utilisateurPK;
+    public void setIdUtilisateur(Integer idUtilisateur) {
+        this.idUtilisateur = idUtilisateur;
     }
 
     public String getNom() {
@@ -143,42 +140,18 @@ public class Utilisateur implements Serializable {
         this.mail = mail;
     }
 
-    public Collection<Réponses> getRéponsesCollection() {
-        return réponsesCollection;
+    public String getRole() {
+        return role;
     }
 
-    public void setRéponsesCollection(Collection<Réponses> réponsesCollection) {
-        this.réponsesCollection = réponsesCollection;
-    }
-
-    public Collection<Questions> getQuestionsCollection() {
-        return questionsCollection;
-    }
-
-    public void setQuestionsCollection(Collection<Questions> questionsCollection) {
-        this.questionsCollection = questionsCollection;
-    }
-
-    public Graphe getGrapheidGraphe() {
-        return grapheidGraphe;
-    }
-
-    public void setGrapheidGraphe(Graphe grapheidGraphe) {
-        this.grapheidGraphe = grapheidGraphe;
-    }
-
-    public Parcours getParcours() {
-        return parcours;
-    }
-
-    public void setParcours(Parcours parcours) {
-        this.parcours = parcours;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (utilisateurPK != null ? utilisateurPK.hashCode() : 0);
+        hash += (idUtilisateur != null ? idUtilisateur.hashCode() : 0);
         return hash;
     }
 
@@ -189,7 +162,7 @@ public class Utilisateur implements Serializable {
             return false;
         }
         Utilisateur other = (Utilisateur) object;
-        if ((this.utilisateurPK == null && other.utilisateurPK != null) || (this.utilisateurPK != null && !this.utilisateurPK.equals(other.utilisateurPK))) {
+        if ((this.idUtilisateur == null && other.idUtilisateur != null) || (this.idUtilisateur != null && !this.idUtilisateur.equals(other.idUtilisateur))) {
             return false;
         }
         return true;
@@ -197,7 +170,7 @@ public class Utilisateur implements Serializable {
 
     @Override
     public String toString() {
-        return "fr.insset.l3.projet_simoninnicolas.watissecorentin.Utilisateur[ utilisateurPK=" + utilisateurPK + " ]";
+        return "fr.insset.l3.projet_simoninnicolas.watissecorentin.entities.Utilisateur[ idUtilisateur=" + idUtilisateur + " ]";
     }
     
 }
