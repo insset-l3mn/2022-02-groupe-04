@@ -26,20 +26,16 @@ export default function Navbar1() {
 
       <Nav className="me-auto">
 
-      <Link to="/Formation" style={{  textDecoration:'none' }}>
-        <Nav.Link href="/Formation">Votre formation ...</Nav.Link>
-      </Link>
+      <Link className="nav-link" to="/Formation" style={{  textDecoration:'none' }}> Votre formation ...  </Link>
 
-      <Link to="/Questionnaire" style={{  textDecoration:'none' }}>
-        <Nav.Link href="/Questionnaire">Votre questionnaire ...</Nav.Link>
-      </Link>
+      <Link className="nav-link" to="/Questionnaire" style={{  textDecoration:'none' }}> Votre questionnaire ...  </Link>
 
       </Nav>
       <Navbar.Collapse className="justify-content-end">
 
-        <Link to="/Connexion" style={{  textDecoration:'none' }}>
-         <Nav.Link href="/Connexion" style={NavStyle}>Connexion</Nav.Link>
-        </Link>
+        <Link className="nav-link"  to="/Connexion" style={{ 
+           textDecoration:'none',
+           color:'rgba(255,255,255,.55)'}}>Connexion</Link>
 
       </Navbar.Collapse>
   </Container>
