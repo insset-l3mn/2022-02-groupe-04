@@ -17,8 +17,8 @@ export default function Navbar1() {
 <Navbar bg="dark" variant="dark">
   <Container>
 
-      <Link to="/" style={{  textDecoration:'none' }}>
-      <Navbar.Brand>Jakarta EE X ReactJS - Projet</Navbar.Brand>
+      <Link to="/" style={{  textDecoration:'none', overflowY:"hidden", overflowX:"hidden" }}>
+      <Navbar.Brand style={{ overflowY:"hidden", overflowX:"hidden"}}>Jakarta EE X ReactJS - Projet</Navbar.Brand>
       </Link>
      
      
