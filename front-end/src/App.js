@@ -14,7 +14,6 @@ import Inscription from './Containers/Inscription/Inscription';
 
 function App() {
   return (
-<<<<<<< Updated upstream
     <>
       <Routes>
         <Route path="/"              element={ <Home/>} />
@@ -25,11 +24,7 @@ function App() {
         <Route path='*'              element={ <NotFound /> } />
       </Routes>
     </>
-=======
-    <div className="App">
-      <h1> Hello World</h1>
-    </div>
->>>>>>> Stashed changes
+
   );
 }
 

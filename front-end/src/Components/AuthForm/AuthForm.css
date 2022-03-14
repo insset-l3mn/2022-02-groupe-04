@@ -5,7 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    overflow: visible;
+    overflow-x: hidden;
 }
 
 .form-controle:focus {
@@ -120,3 +120,24 @@
         height: 440px
     }
 }
+
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(33,37,41,1) 0c0d13;
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #0c0d13;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(33,37,41,1);
+    border-radius: 20px;
+    border: 3px solid 0c0d13;
+  }
