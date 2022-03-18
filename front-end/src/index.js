@@ -5,15 +5,19 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min';
 import { BrowserRouter } from "react-router-dom";
+import { CookiesProvider } from "react-cookie";
+
 
 
 
 
 ReactDOM.render(
+  <CookiesProvider>
   <BrowserRouter>
     <App />
 
-  </BrowserRouter>,
+  </BrowserRouter>
+  </CookiesProvider>,
   document.getElementById('root')
 );
 
