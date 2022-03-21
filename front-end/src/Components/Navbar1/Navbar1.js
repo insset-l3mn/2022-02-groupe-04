@@ -3,11 +3,6 @@ import { Navbar } from 'react-bootstrap'
 import { Container, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-const NavStyle =
-{
-  textDecoration: 'none',
-  color: 'rgba(255,255,255,.55)'
-}
 
 export default function Navbar1() {
   return (
