@@ -10,8 +10,6 @@ import NotFound from './Containers/NotFound/NotFound';
 import Inscription from './Containers/Inscription/Inscription';
 
 
-
-
 function App() {
   return (
     <>
