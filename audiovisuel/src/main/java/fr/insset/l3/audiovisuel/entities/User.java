@@ -26,26 +26,36 @@ import javax.validation.constraints.Size;
 @NamedQueries({
     @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u"),
     @NamedQuery(name = "User.findByIdUser", query = "SELECT u FROM User u WHERE u.idUser = :idUser"),
-    @NamedQuery(name = "User.findByMail", query = "SELECT u FROM User u WHERE u.mail = :mail"),
-    @NamedQuery(name = "User.findByPassword", query = "SELECT u FROM User u WHERE u.password = :password")})
+    @NamedQuery(name = "User.findByMailUser", query = "SELECT u FROM User u WHERE u.mailUser = :mailUser"),
+    @NamedQuery(name = "User.findByPasswordUser", query = "SELECT u FROM User u WHERE u.passwordUser = :passwordUser"),
+    @NamedQuery(name = "User.findByRoleUser", query = "SELECT u FROM User u WHERE u.roleUser = :roleUser"),
+    @NamedQuery(name = "User.findByFormationUser", query = "SELECT u FROM User u WHERE u.formationUser = :formationUser")})
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "idUser")
+    @Column(name = "id_user")
     private Integer idUser;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 45)
-    @Column(name = "mail")
-    private String mail;
+    @Size(min = 1, max = 50)
+    @Column(name = "mail_user")
+    private String mailUser;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 45)
-    @Column(name = "password")
-    private String password;
+    @Size(min = 1, max = 50)
+    @Column(name = "password_user")
+    private String passwordUser;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 50)
+    @Column(name = "role_user")
+    private String roleUser;
+    @Size(max = 50)
+    @Column(name = "formation_user")
+    private String formationUser;
 
     public User() {
     }
@@ -54,10 +64,11 @@ public class User implements Serializable {
         this.idUser = idUser;
     }
 
-    public User(Integer idUser, String mail, String password) {
+    public User(Integer idUser, String mailUser, String passwordUser, String roleUser) {
         this.idUser = idUser;
-        this.mail = mail;
-        this.password = password;
+        this.mailUser = mailUser;
+        this.passwordUser = passwordUser;
+        this.roleUser = roleUser;
     }
 
     public Integer getIdUser() {
@@ -68,20 +79,36 @@ public class User implements Serializable {
         this.idUser = idUser;
     }
 
-    public String getMail() {
-        return mail;
+    public String getMailUser() {
+        return mailUser;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setMailUser(String mailUser) {
+        this.mailUser = mailUser;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPasswordUser() {
+        return passwordUser;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPasswordUser(String passwordUser) {
+        this.passwordUser = passwordUser;
+    }
+
+    public String getRoleUser() {
+        return roleUser;
+    }
+
+    public void setRoleUser(String roleUser) {
+        this.roleUser = roleUser;
+    }
+
+    public String getFormationUser() {
+        return formationUser;
+    }
+
+    public void setFormationUser(String formationUser) {
+        this.formationUser = formationUser;
     }
 
     @Override
