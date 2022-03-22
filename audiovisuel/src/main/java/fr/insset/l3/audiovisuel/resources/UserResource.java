@@ -90,7 +90,7 @@ public class UserResource {
             return value.toString(); 
         } else {
             JsonObject value = Json.createObjectBuilder()
-     .add("3", "All is correct")
+     .add("3", user.getRoleUser())
      .build();
                     
             return value.toString(); 
