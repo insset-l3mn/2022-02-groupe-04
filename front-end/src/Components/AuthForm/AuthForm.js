@@ -18,6 +18,8 @@ export default function AuthForm() {
   /* Création du Hook pour la création d'un Cookie*/
   const [cookies, setCookie] = useCookies(["logged"]);
 
+  let binData = null;
+
   /* Fonction qui recup et formanet les données du FORM*/
   const handleChange = (event) => {
     const name = event.target.name;
@@ -33,10 +35,13 @@ export default function AuthForm() {
 
       fetch('/audiovisuel/resources/user/login/'+LogUser.email+"/"+LogUser.password)
       .then(response => response.text())
-      .then(text => setGreeting(text));
-    greeting[2] === "3" ? Redirect() : Error()
-      
-  }
+      .then(data => {
+        // console.log(data); /* Montre la réponse de l'API */
+        binData = JSON.parse(data);
+        console.log(binData[3]); /* Montre le role de l'user */
+        binData[3] != undefined ? Redirect() : Error();
+      });
+     }
 
   /* Si connexion réussi -> redirection + cookie */
   const Redirect = () => {
@@ -44,6 +49,7 @@ export default function AuthForm() {
     alert('Connexion réussi, appuyez sur "OK" pour être redirige !');
     setCookie("logged", "yes", { path: "/" });
     setCookie("username", LogUser.email);
+    setCookie("role", binData[3])
     history.push("/")
     history.go()
   }
@@ -51,17 +57,25 @@ export default function AuthForm() {
   const Error = () => {
   // Réutiliser greeting pour afficher l'erreur du formulaire!
 
-      switch(greeting[2]) {
-    default:
-      alert('Erreur interne, veuillez ressayez plus tard')
-      break;
-    case "1":
+  //     switch(binData) {
+  //   default:
+  //     alert('Erreur interne, veuillez ressayez plus tard')
+  //     break;
+  //   case binData[1]:
+  //     alert ('Connexion refusé : Email non trouvé dans notre BDD !');
+  //     break;
+  //   case binData[2]:
+  //     alert ("Connexion refusé : L'email et le mot de passe ne correspond pas !");
+  //     break;
+  // }
+
+    if (binData[1]) {
       alert ('Connexion refusé : Email non trouvé dans notre BDD !');
-      break;
-    case "2":
+    } else if (binData[2]) {
       alert ("Connexion refusé : L'email et le mot de passe ne correspond pas !");
-      break;
-  }
+    } else {
+      alert('Erreur interne, veuillez ressayez plus tard')
+    }
 }
 
   return (

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './RegistForm.css';
 import { Form, Button } from 'react-bootstrap';
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
+
 
 
 
@@ -15,6 +16,9 @@ export default function RegistForm() {
   /* Création du Hook pour la redirection */
   const history = createBrowserHistory();
 
+  let binData = null;
+
+
   /* Fonctions pour recup les infos du form*/
   const handleChange = (event) => {
     const name = event.target.name;
@@ -23,15 +27,22 @@ export default function RegistForm() {
 
   }
 
-  const handleSubmit = (event) => {
+
+   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(NewUser);
 
     fetch('/audiovisuel/resources/user/register/'+NewUser.email+"/"+NewUser.password+"/"+NewUser.role)
-      .then(respones => response.text())
-      .then(text => setGreeting(text));
+      .then(response => response.text())
+      // .then(text => setGreeting(text));
+      .then(data => {
+        console.log(data);
+        binData = data;
+        binData[2] === "1" ? Redirect() : Error();
+      });
+        // console.log('bin',binData[2])
+        // binData[2] === "1" ? Redirect() : Error() 
   }
-  greetin[2] === "1" ? Redirect() : Error()
 
   /* Si register réussi -> redirection pour connexion*/
   const Redirect = () => {
@@ -44,6 +55,7 @@ export default function RegistForm() {
     alert('Enregistrement échoué !')
     history.push('/Inscription')
     history.go()
+  }
   
 
   return (
