@@ -8,8 +8,6 @@ const h1Style = {
   zIndex: "2",
   paddingTop: "25px",
   textDecoration: "underline 2px white"
-  
-  
 }
 
 export default function Home() {

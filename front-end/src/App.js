@@ -8,6 +8,7 @@ import Formation from './Containers/Formation/Formation';
 import Login from './Containers/Login/Login';
 import NotFound from './Containers/NotFound/NotFound';
 import Inscription from './Containers/Inscription/Inscription';
+import Admin from './Containers/Admin/Admin';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/Questionnaire" element={ <Quesionnaire/> } />
         <Route path="/Connexion"     element={ <Login/>} />
         <Route path="/Inscription"   element={ <Inscription /> } /> 
+        <Route path="/PanelAdmin"    element={ <Admin /> } />
         <Route path='*'              element={ <NotFound /> } />
       </Routes>
     </>

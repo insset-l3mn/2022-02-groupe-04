@@ -1,10 +1,13 @@
 import React from 'react'
 import { Navbar } from 'react-bootstrap'
 import { Container, Nav } from 'react-bootstrap'
+import { useCookies } from 'react-cookie'
 import { Link } from 'react-router-dom'
 
 
 export default function Navbar1() {
+  const [cookies] = useCookies(["role"]);
+
   return (
     <>
 
@@ -22,6 +25,8 @@ export default function Navbar1() {
             <Link className="nav-link" to="/Formation" style={{ textDecoration: 'none' }}> Votre formation ...  </Link>
 
             <Link className="nav-link" to="/Questionnaire" style={{ textDecoration: 'none' }}> Votre questionnaire ...  </Link>
+
+            <Link className="nav-link" to="/PanelAdmin" style={{ textDecoration : 'none'}}> Panel ADMIN ... </Link>
 
           </Nav>
           <Navbar.Collapse className="justify-content-end">
