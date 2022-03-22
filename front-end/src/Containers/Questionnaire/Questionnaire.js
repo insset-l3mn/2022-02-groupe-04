@@ -14,7 +14,7 @@ const h1Style = {
 }
 
 export default function Quesionnaire() {
-  const [cookies, setCookie] = useCookies(["logged"]);
+  const [cookies] = useCookies(["logged"]);
 
   if (typeof cookies.logged != "undefined") {
 

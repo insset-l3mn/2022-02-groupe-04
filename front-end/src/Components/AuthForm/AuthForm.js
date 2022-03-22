@@ -1,5 +1,5 @@
 import './AuthForm.css'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { createBrowserHistory } from "history";
@@ -9,6 +9,8 @@ import { useCookies } from 'react-cookie';
 
 export default function AuthForm() {
 
+  /* Pour récuperer depuis BDD*/
+  const [greeting, setGreeting] = useState();
   /* Recupération des info du FORM */
   const [LogUser, setLogUser] = useState({});
   /* Création du Hook pour la redirection */
@@ -25,20 +27,45 @@ export default function AuthForm() {
   }
 
   const handleSubmit = (event) => {
+
     event.preventDefault();
     console.log(LogUser);
-    LogUser.email === "test@test.fr" && LogUser.password === "123" ? Redirect() : alert('Connexion refusé')
+
+      // fetch('/audiovisuel/user/login/'+LogUser.email+"/"+LogUser.password)
+      fetch('/audiovisuel/resources/user')
+      .then(response => response.text())
+      .then(text => setGreeting(text));
+
+      alert(greeting)
+
+    
+    greeting === "ping" ? Redirect() : Error()
+    // greeting === 3 ? Redirect() : Error(greeting)
+    // LogUser.email === "test@test.fr" && LogUser.password === "123" ? Redirect() : alert('Connexion refusé')
 
   }
 
   /* Si connexion réussi -> redirection + cookie */
   const Redirect = () => {
 
-    alert('Connexion réussi, appuyez sur "OK" pour être redirige !')
+    alert('Connexion réussi, appuyez sur "OK" pour être redirige !');
     setCookie("logged", "yes", { path: "/" });
     setCookie("username", LogUser.email);
     history.push("/")
     history.go()
+  }
+
+  const Error = () => {
+  // const Error = (greetin) => {
+  // Réutiliser greeting pour afficher l'erreur du formulaire!
+  /*
+      switch(greeting) {
+    case 1:
+      return ('Connexion refusé : Email non trouvé dans notre BDD !');
+    case 2:
+      return ('Connexion refusé : L'email et le mot de passe ne correspond pas !');
+  */
+    alert('Connexion refusé : MDP et/ou Email invalide !')
   }
 
   return (

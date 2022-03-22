@@ -3,7 +3,6 @@ import Background from '../../Components/Background/Background'
 import Navbar1 from '../../Components/Navbar1/Navbar1'
 import AuthForm from '../../Components/AuthForm/AuthForm'
 import { useCookies } from 'react-cookie'
-import { Link } from 'react-router-dom'
 
 const ButtonStyle = {
     border: "none",
