@@ -31,18 +31,11 @@ export default function AuthForm() {
     event.preventDefault();
     console.log(LogUser);
 
-      // fetch('/audiovisuel/user/login/'+LogUser.email+"/"+LogUser.password)
-      fetch('/audiovisuel/resources/user')
+      fetch('/audiovisuel/resources/user/login/'+LogUser.email+"/"+LogUser.password)
       .then(response => response.text())
       .then(text => setGreeting(text));
-
-      alert(greeting)
-
-    
-    greeting === "ping" ? Redirect() : Error()
-    // greeting === 3 ? Redirect() : Error(greeting)
-    // LogUser.email === "test@test.fr" && LogUser.password === "123" ? Redirect() : alert('Connexion refusé')
-
+    greeting[2] === "3" ? Redirect() : Error()
+      
   }
 
   /* Si connexion réussi -> redirection + cookie */
@@ -56,17 +49,20 @@ export default function AuthForm() {
   }
 
   const Error = () => {
-  // const Error = (greetin) => {
   // Réutiliser greeting pour afficher l'erreur du formulaire!
-  /*
-      switch(greeting) {
-    case 1:
-      return ('Connexion refusé : Email non trouvé dans notre BDD !');
-    case 2:
-      return ('Connexion refusé : L'email et le mot de passe ne correspond pas !');
-  */
-    alert('Connexion refusé : MDP et/ou Email invalide !')
+
+      switch(greeting[2]) {
+    default:
+      alert('Erreur interne, veuillez ressayez plus tard')
+      break;
+    case "1":
+      alert ('Connexion refusé : Email non trouvé dans notre BDD !');
+      break;
+    case "2":
+      alert ("Connexion refusé : L'email et le mot de passe ne correspond pas !");
+      break;
   }
+}
 
   return (
     <>

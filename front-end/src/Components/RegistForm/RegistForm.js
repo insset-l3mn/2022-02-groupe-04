@@ -8,6 +8,8 @@ import { createBrowserHistory } from "history";
 
 export default function RegistForm() {
 
+  /* Pour récuperer depuis BDD*/
+  const [greeting, setGreeting] = useState();
   /* Recupération des info du FORM */
   const [NewUser, setNewUser] = useState({});
   /* Création du Hook pour la redirection */
@@ -24,12 +26,25 @@ export default function RegistForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(NewUser);
-    setTimeout(function () {
-      history.push("/Connexion")
-      history.go()
-    }, 3000);
 
+    fetch('/audiovisuel/resources/user/register/'+NewUser.email+"/"+NewUser.password+"/"+NewUser.role)
+      .then(respones => response.text())
+      .then(text => setGreeting(text));
   }
+  greetin[2] === "1" ? Redirect() : Error()
+
+  /* Si register réussi -> redirection pour connexion*/
+  const Redirect = () => {
+    alert('Enregistrement réussi, appuyez sur "OK" pour être redirigé !');
+    history.push('/Connexion')
+    history.go()
+  }
+
+  const Error = () => {
+    alert('Enregistrement échoué !')
+    history.push('/Inscription')
+    history.go()
+  
 
   return (
     <>
@@ -45,8 +60,12 @@ export default function RegistForm() {
                 <Form onSubmit={handleSubmit} >
 
                   <Form.Group className="mb-3" controlId="formBasicName">
-                    <Form.Label>Nom</Form.Label>
-                    <Form.Control type="name" name="name" value={NewUser.name || ''} onChange={handleChange} placeholder="Entrez votre nom" required={true} autoComplete="off" />
+                    <Form.Label>Rôle</Form.Label>
+                    <Form.Select type="role" name="role" value={NewUser.role || ''} onChange={handleChange} required={true} autoComplete="off" >
+                        <option>Ton rôle ...</option>
+                        <option value="user">Utilisateur</option>
+                        <option value="formateur">Formateur</option>
+                    </Form.Select>
                   </Form.Group>
 
 
