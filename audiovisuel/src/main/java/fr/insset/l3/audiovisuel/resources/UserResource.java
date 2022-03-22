@@ -103,5 +103,33 @@ public class UserResource {
         //}
         //return (User) q.setParameter("mail", mail).getSingleResult();
     }
+       
+    
+    @GET
+    @Consumes("application/x-www-form-urlencoded")
+    @Path("register/{mail}/{password}/{role}")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public String find(@PathParam("mail") String mail, @PathParam("password") String password, @PathParam("role") String role ){
+           Query q = em.createNamedQuery("User.findByMailUser");
+        
+            User user;
+            user = (User) q.setParameter("mailUser", mail).getResultList().stream().findFirst().orElse(null);
+           
+           if (user==null) { 
+             JsonObject value = Json.createObjectBuilder()
+     .add("1", "account not in BDD")
+     .build();
+            em.persist(new User(null,mail,password,role));
+
+            return value.toString();
+        } else {
+            JsonObject value = Json.createObjectBuilder()
+     .add("2", "account already exist !")
+     .build();
+           
+           return value.toString();
+    }
+    
+    }
     
 }
