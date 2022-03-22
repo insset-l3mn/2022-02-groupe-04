@@ -16,6 +16,7 @@ export default function Login() {
   const DelCookie = (event) => {
     removeCookie('logged');
     removeCookie('username');
+    removeCookie('role');
   }
 
   const [cookies, setCookie, removeCookie] = useCookies(["logged"]);

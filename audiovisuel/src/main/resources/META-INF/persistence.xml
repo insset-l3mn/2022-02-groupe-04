@@ -10,4 +10,4 @@
       <property name="eclipselink.logging.level" value="FINE"/>
     </properties>
   </persistence-unit>
-</persistence>
+</persistence> 
