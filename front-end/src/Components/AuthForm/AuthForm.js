@@ -55,19 +55,6 @@ export default function AuthForm() {
   }
 
   const Error = () => {
-  // Réutiliser greeting pour afficher l'erreur du formulaire!
-
-  //     switch(binData) {
-  //   default:
-  //     alert('Erreur interne, veuillez ressayez plus tard')
-  //     break;
-  //   case binData[1]:
-  //     alert ('Connexion refusé : Email non trouvé dans notre BDD !');
-  //     break;
-  //   case binData[2]:
-  //     alert ("Connexion refusé : L'email et le mot de passe ne correspond pas !");
-  //     break;
-  // }
 
     if (binData[1]) {
       alert ('Connexion refusé : Email non trouvé dans notre BDD !');
