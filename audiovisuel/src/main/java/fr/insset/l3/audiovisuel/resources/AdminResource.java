@@ -26,7 +26,7 @@ import javax.ws.rs.core.MediaType;
  */
 @DataSourceDefinition(
         className = "com.mysql.cj.jdbc.MysqlDataSource",
-        name = "java:app/jdbc/jakartaxreact",
+        name = "java:app/jdbc/jakartaxreact/user",
         serverName = "localhost",
         portNumber = 3306,
         user = "root", // nom et

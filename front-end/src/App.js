@@ -9,6 +9,7 @@ import Login from './Containers/Login/Login';
 import NotFound from './Containers/NotFound/NotFound';
 import Inscription from './Containers/Inscription/Inscription';
 import Admin from './Containers/Admin/Admin';
+import Questions from './Containers/Questions/Questions';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/Connexion"     element={ <Login/>} />
         <Route path="/Inscription"   element={ <Inscription /> } /> 
         <Route path="/PanelAdmin"    element={ <Admin /> } />
+        <Route path="/QuestionsAdmin" element={ <Questions />} />
         <Route path='*'              element={ <NotFound /> } />
       </Routes>
     </>
