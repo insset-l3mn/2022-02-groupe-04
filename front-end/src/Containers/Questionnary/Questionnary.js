@@ -1,6 +1,6 @@
 import React from 'react'
-import Background from '../../Components/Background/Background'
-import Navbar1 from '../../Components/Navbar1/Navbar1'
+import Background from '../../Components/Template/Background/Background'
+import Navbar1 from '../../Components/Template/Navbar1/Navbar1'
 import { useCookies } from 'react-cookie'
 import { Link } from 'react-router-dom'
 
@@ -13,7 +13,7 @@ const h1Style = {
 
 }
 
-export default function Quesionnaire() {
+export default function Questionnary() {
   const [cookies] = useCookies(["logged"]);
 
   if (typeof cookies.logged != "undefined") {

@@ -19,7 +19,7 @@ import javax.validation.constraints.Size;
 
 /**
  *
- * @author Nicolas
+ * @author coren
  */
 @Entity
 @Table(name = "questions")
@@ -38,6 +38,7 @@ public class Questions implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
+    @NotNull
     @Column(name = "idQuestions")
     private Integer idQuestions;
     @Basic(optional = false)

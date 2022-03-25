@@ -82,7 +82,7 @@ public class QuestionResources {
             Questions questions;
             questions = (Questions) q.setParameter("questions", Questions).getResultList().stream().findFirst().orElse(null);
 
-            em.persist(new Questions(null,Questions,Reponse1,Reponse2,Reponse3,Reponse4,Theme));
+            em.persist(new Questions(1,Questions,Reponse1,Reponse2,Reponse3,Reponse4,Theme));
             
             JsonObject value = Json.createObjectBuilder()
             .add("1", "question successfully created")

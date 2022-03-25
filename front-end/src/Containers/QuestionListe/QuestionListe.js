@@ -1,7 +1,7 @@
 import React from 'react'
-import Background from '../../Components/Template/Background/Background'
 import Navbar1 from '../../Components/Template/Navbar1/Navbar1'
-import NewQuestions from '../../Components/Admin/NewQuestions/NewQuestions'
+import Background from '../../Components/Template/Background/Background'
+import QuestionList from '../../Components/Admin/QuestionList/QuestionList'
 import { useCookies } from 'react-cookie'
 import { Link } from 'react-router-dom'
 
@@ -11,22 +11,21 @@ const h1Style = {
     zIndex: "2",
     paddingTop: "25px",
     textDecoration: "underline 2px white"
-  
   }
 
-export default function Questions() {
-    const [cookies] = useCookies(['role']);
+export default function QuestionListe() {
+  const [cookies] = useCookies(['role']);
 
-    if (cookies.role === "formateur") {
-        return (
-            <>
-              <Background />
-              <Navbar1 />
-      
-              <h1 style={h1Style}> Votre panel ADMIN :</h1> 
+  if (cookies.role === "formateur") {
+      return (
+          <>
+    <Background />
+    <Navbar1 />
 
-              <NewQuestions />
-            </>
+    <h1 style={h1Style}> Votre panel ADMIN :</h1>     
+
+    <QuestionList />
+    </>
           )
         } else {
           return (

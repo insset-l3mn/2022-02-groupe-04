@@ -1,7 +1,7 @@
 import React from 'react'
-import Background from '../../Components/Background/Background'
-import Navbar1 from '../../Components/Navbar1/Navbar1'
-import AuthForm from '../../Components/AuthForm/AuthForm'
+import Background from '../../Components/Template/Background/Background'
+import Navbar1 from '../../Components/Template/Navbar1/Navbar1'
+import AuthForm from '../../Components/User/AuthForm/AuthForm'
 import { useCookies } from 'react-cookie'
 
 const ButtonStyle = {

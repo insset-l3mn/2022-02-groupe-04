@@ -26,19 +26,27 @@ const handleChange = (event) => {
 
     const formBody = Object.entries(LogQuestion).map(([key, value]) => encodeURIComponent(key) + '=' + encodeURIComponent(value)).join('&')
     fetch('/audiovisuel/resources/questions/add', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-            },
-            body: formBody
-            })
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                },
+                body: formBody
+                })
             .then(response => response.text())
             .then(data => {
-              // console.log(data); /* Montre la réponse de l'API */
-              binData = JSON.parse(data);
-              console.log(binData); /* Montre le role de l'user */
+              binData = data;
+              console.log(binData[2]); /* Montre la réponse de l'API */
+              binData[2] === "1" ? Ok() : Error();
         });}
             
+        const Ok = () => {
+          alert('Nouvelle question ajoutée avec succé!');
+        }
+      
+        const Error = () => {
+          alert('Une erreur est survenu !')
+        }
+        
 
 
 
@@ -54,21 +62,21 @@ const handleChange = (event) => {
               <Form onSubmit={handleSubmit} style={{ zIndex: "9", display: "block" }}>
                 <Form.Group className="mb-3" controlId="formBasicQuestion">
                   <Form.Label>Question</Form.Label>
-                  <Form.Control type="question" name="question" value={LogQuestion.question || ''} placeholder="Entrez votre question" onChange={handleChange} required={true} autoComplete="off" />
+                  <Form.Control type="Questions" name="Questions" value={LogQuestion.Questions || ''} placeholder="Entrez votre question" onChange={handleChange} required={true} autoComplete="off" />
                   <br></br>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicResponse">
                   <Form.Label>Vos propositions de réponse </Form.Label>
-                  <Form.Control type="resp1" name="resp1" value={LogQuestion.resp1 || ''} placeholder="Proprosition n°1" onChange={handleChange} required={true} autoComplete="off" />
-                  <Form.Control type="resp2" name="resp2" value={LogQuestion.resp2 || ''} placeholder="Proprosition n°2" onChange={handleChange} required={true} autoComplete="off" />
-                  <Form.Control type="resp3" name="resp3" value={LogQuestion.resp3 || ''} placeholder="Proprosition n°3" onChange={handleChange} required={true} autoComplete="off" />
-                  <Form.Control type="resp4" name="resp4" value={LogQuestion.resp4 || ''} placeholder="Proprosition n°4" onChange={handleChange} required={true} autoComplete="off" />
+                  <Form.Control type="Reponse1" name="Reponse1" value={LogQuestion.Reponse1 || ''} placeholder="Proprosition n°1" onChange={handleChange} required={true} autoComplete="off" />
+                  <Form.Control type="Reponse2" name="Reponse2" value={LogQuestion.Reponse2 || ''} placeholder="Proprosition n°2" onChange={handleChange} required={true} autoComplete="off" />
+                  <Form.Control type="Reponse3" name="Reponse3" value={LogQuestion.Reponse3 || ''} placeholder="Proprosition n°3" onChange={handleChange} required={true} autoComplete="off" />
+                  <Form.Control type="Reponse4" name="Reponse4" value={LogQuestion.Reponse4 || ''} placeholder="Proprosition n°4" onChange={handleChange} required={true} autoComplete="off" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicTheme">
                 <Form.Label>Thème de la question </Form.Label>
-                <Form.Select type="competence" name="competence" value={LogQuestion.competence || ''} onChange={handleChange} required={true} autoComplete="off" >
+                <Form.Select type="Theme" name="Theme" value={LogQuestion.Theme || ''} onChange={handleChange} required={true} autoComplete="off" >
                         <option>Sujet de la question ...</option>
                         <option value="1-Animateur2D3D">Animateur(trice) de 2D et 3D</option>
                         <option value="2-AnimateurRadioTele">Animateur(trice) de de radio et de télévision</option>

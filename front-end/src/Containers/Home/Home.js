@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Navbar1 from '../../Components/Navbar1/Navbar1'
-import Background from '../../Components/Background/Background'
+import Navbar1 from '../../Components/Template/Navbar1/Navbar1'
+import Background from '../../Components/Template/Background/Background'
 
 const h1Style = {
   textAlign: "center",
