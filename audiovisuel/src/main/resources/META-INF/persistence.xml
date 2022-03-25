@@ -5,9 +5,10 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <jta-data-source>java:app/jdbc/jakartaxreact</jta-data-source>
     <class>fr.insset.l3.audiovisuel.entities.User</class>
+    <class>fr.insset.l3.audiovisuel.entities.Questions</class>
     <properties>
       <!--  <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>  -->
       <property name="eclipselink.logging.level" value="FINE"/>
     </properties>
   </persistence-unit>
-</persistence> 
+</persistence>

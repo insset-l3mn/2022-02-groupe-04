@@ -29,11 +29,11 @@ import org.json.JSONObject;
  */
 @DataSourceDefinition(
         className = "com.mysql.cj.jdbc.MysqlDataSource",
-        name = "java:app/jdbc/jakartaxreact",
+        name = "java:app/jdbc/jakartaxreact/user",
         serverName = "localhost",
         portNumber = 3306,
         user = "root", // nom et
-        password = "04092001", // mot de passe que vous avez donnés lors de la création de la base de données
+        password = "29092001", // mot de passe que vous avez donnés lors de la création de la base de données
         databaseName = "jakartaxreact",
         properties = {
             "useSSL=false",
