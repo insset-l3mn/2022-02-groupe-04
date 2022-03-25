@@ -3,18 +3,16 @@ import React, { useEffect, useState } from 'react';
 
 let binData = null;
 
+const ButtonStyle = {
+
+  display:'block',
+  width:'100px',
+  border:'none',
+  padding:'4px',
+  backgroundColor:'none',
+}
+
 export default function AdminList() {
-
-// useEffect(()=>{
-
-//   fetch('/audiovisuel/resources/admin/list')
-//   .then(response => response.text())
-//   .then(data => {
-//     // console.log(data); /* Montre la réponse de l'API */
-//     binData = JSON.parse(data);
-//     console.log(binData[0].idUser)
-//   });    
-//   }, [])
 
 const [data, setData] = useState([]);
 const getData=()=>{
@@ -32,6 +30,19 @@ const getData=()=>{
     getData()
   },[])
 
+function RemoveUser(Id){
+  var dialog = window.confirm("Supprimer l'utilisateur : "+Id);
+if (dialog) {
+    alert('Utilisateur supprimé !')
+    fetch('/audiovisuel/resources/admin/remove/'+Id)
+    window.location.reload(false)
+    
+}
+else {
+    alert('Utilisateur non supprimé !')
+}
+}
+
   return (
 
   <>
@@ -47,12 +58,17 @@ const getData=()=>{
           </tr>
         </thead>
         <tbody>
-          <td>{data && data.length>0 && data.map((item)=><p>{item.idUser}</p>)}</td>
+          <tr>
+          <td>
+            {data && data.length>0 && data.map((item)=><button value={item.idUser} onClick={function(){RemoveUser(item.idUser)}} style={ButtonStyle}>{item.idUser}</button>)}
+          </td>
           <td>{data && data.length>0 && data.map((item)=><p>{item.mailUser}</p>)}</td>
           <td>{data && data.length>0 && data.map((item)=><p>{item.passwordUser}</p>)}</td>
           <td>{data && data.length>0 && data.map((item)=><p>{item.roleUser}</p>)}</td>
           <td>{data && data.length>0 && data.map((item)=><p>{item.formationUser}</p>)}</td>
+          </tr>
         </tbody>
+
       </table>
 
 
