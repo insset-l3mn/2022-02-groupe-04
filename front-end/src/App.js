@@ -1,6 +1,6 @@
 import './App.css';
-import './Components/Background/Background.scss'
-import { Routes, Route} from "react-router-dom"
+import './Components/Template/Background/Background.scss'
+import { Routes, Route } from "react-router-dom"
 
 import Home from './Containers/Home/Home'
 import Formation from './Containers/Formation/Formation';

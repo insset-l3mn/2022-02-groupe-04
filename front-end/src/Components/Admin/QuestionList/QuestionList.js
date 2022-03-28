@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-let binData = null;
-
 const ButtonStyle = {
 
     display:'block',
