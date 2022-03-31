@@ -1,1 +1,3 @@
-# 2022-02-groupe-04
+#A propos du projet ...
+
+[![Product Name Screen Shot][-Formation]](/docs/Images/-Formation.png)
