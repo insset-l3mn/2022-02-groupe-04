@@ -54,7 +54,7 @@ Le point central de notre diagramme est la classe Graph, qui contiendra en attri
 son id, l'id de l'utilisateur, nous verrons pourquoi après, ainsi que son type, 
 qu'il soit partiel, global ou aggrégé.
 
-En effet, notre digramme va suivre une structure dépendant de ce graph.
+En effet, notre digramme va suivre une structure dépendante de ce graph.
 Nous allons avoir un Graph de compétences qui sera notre graph initial.
 Puis, grâce à ce graph nous allons générer un questionnaire initial,
 qui sera composé de questions possédants en attribut leur id, leur intitulé,
